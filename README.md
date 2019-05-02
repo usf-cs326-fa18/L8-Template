@@ -1,8 +1,14 @@
-# Lab 8: Networking with Sockets
+# Lab 11: Networking with Sockets
 
 In this lab you'll get more familiar with using sockets to send messages between a client and server. Sample code has been provided for you.
 
-Steps:
+## Main Takeaway
+The point of this lab is to demonstrate how sockets work, as well as a fundamental aspect of their design: sockets transmit
+simple streams of data, **not** discrete messages. As a result, `read()` must be called multiple times when reading from
+a socket file descriptor to ensure all the data is received.
+
+
+## Lab Steps:
 
 1. Play around with the provided network code. Try to understand the workflow and function calls -- the man pages are a good way to understand how each function works.
 2. Once you're comfortable with the code, follow STEP 1 in client.c. This makes the write() call send one byte at a time rather than the entire 128-byte message
